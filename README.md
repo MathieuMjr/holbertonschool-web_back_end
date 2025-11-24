@@ -1,0 +1,1 @@
+Here are some task I did at Holberton School to practice typing in Python with MyPy
