@@ -6,7 +6,7 @@ another function.
 from typing import Callable
 
 
-def make_multiplier(multiplier: int) -> Callable[[float], float]:
+def make_multiplier(multiplier: float) -> Callable[[float], float]:
     """
     Function that takes a multiplier and return
     a function that multiply this multiplier to a
