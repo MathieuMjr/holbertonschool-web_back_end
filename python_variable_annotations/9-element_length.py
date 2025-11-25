@@ -6,7 +6,10 @@ from a sequence
 """
 from typing import Sequence, Any, Iterable, Tuple, List
 
-def element_length(lst: Sequence[Iterable[Any]]) -> List[Tuple[Iterable[Any]], int]:
+
+def element_length(lst: Sequence[Iterable[Any]]) -> List[
+    Tuple[Iterable[Any]], int
+        ]:
     """
     This function returns tuples of an Iterable
     and it's length from a sequence
