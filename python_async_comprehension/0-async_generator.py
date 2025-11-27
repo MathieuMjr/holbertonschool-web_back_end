@@ -3,6 +3,7 @@
 Docstring pour python_async_comprehension.0-async_generator
 Contains a generator that yield random numbers
 """
+
 from typing import Generator
 import random
 import asyncio
