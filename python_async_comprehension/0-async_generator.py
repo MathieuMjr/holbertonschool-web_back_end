@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """
 Docstring pour python_async_comprehension.0-async_generator
 Contains a generator that yield random numbers
