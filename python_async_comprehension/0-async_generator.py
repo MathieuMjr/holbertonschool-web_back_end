@@ -3,7 +3,7 @@
 Docstring pour python_async_comprehension.0-async_generator
 """
 from typing import AsyncGenerator, Any
-from random import randint
+import random
 import asyncio
 
 
@@ -16,4 +16,4 @@ async def async_generator() -> AsyncGenerator[Any, None]:
     """
     for _ in range(10):
         await asyncio.sleep(1)
-        yield randint(0, 10)
+        yield random.random() * 10
