@@ -53,7 +53,7 @@ class Server:
             self,
             page: int = 1,
             page_size: int = 0
-            ) -> Dict[int, Any]:
+            ) -> Dict[str, Any]:
         datas = self.get_page(page, page_size)
         total_pages = math.ceil(len(self.__dataset) / page_size)
         if page >= total_pages:
