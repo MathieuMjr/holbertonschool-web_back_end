@@ -54,6 +54,10 @@ class Server:
             page: int = 1,
             page_size: int = 10
             ) -> Dict:
+        """
+        Fonction that returns a dict with requested datas
+        and meta-datas about pagination
+        """
         datas = self.get_page(page, page_size)
         total_pages = math.ceil(len(self.__dataset) / page_size)
         next_page = page + 1 if page < total_pages else None
