@@ -5,7 +5,7 @@ a csv
 """
 import csv
 import math
-from typing import List, Tuple, Dict, Any
+from typing import List, Tuple, Dict
 
 
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
@@ -53,7 +53,7 @@ class Server:
             self,
             page: int = 1,
             page_size: int = 0
-            ) -> Dict[str, Any]:
+            ) -> Dict:
         datas = self.get_page(page, page_size)
         total_pages = math.ceil(len(self.__dataset) / page_size)
         next_page = page + 1 if page < total_pages else None
