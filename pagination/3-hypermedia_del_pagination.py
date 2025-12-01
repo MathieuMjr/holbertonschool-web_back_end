@@ -39,6 +39,10 @@ class Server:
         return self.__indexed_dataset
 
     def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
+        """
+        Function that display a dict with datas
+        and meta datas about pagination.
+        It deals with data delation"""
         indexed_datas = self.indexed_dataset()
         assert index < len(indexed_datas)
         datas = []
