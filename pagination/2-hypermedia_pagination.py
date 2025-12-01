@@ -56,18 +56,12 @@ class Server:
             ) -> Dict[str, Any]:
         datas = self.get_page(page, page_size)
         total_pages = math.ceil(len(self.__dataset) / page_size)
-        if page >= total_pages:
-            next_page = None
-        else:
-            next_page = page + 1
-        if page > 1:
-            previous_page = page - 1
-        else:
-            previous_page = None
+        next_page = page + 1 if page < total_pages else None
+        previous_page = page - 1 if page > 1 else None
         if not datas:
             page_size = 0
         return {
-            'page_size': page_size,
+            'page_size': len(datas),
             'page': page,
             'data': datas,
             'next_page': next_page,
