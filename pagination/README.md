@@ -1,0 +1,1 @@
+Here are files and functions I made for Holberton School in order to practice pagination
