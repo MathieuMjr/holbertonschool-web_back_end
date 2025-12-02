@@ -1,0 +1,7 @@
+// mongo script that create a collection + a document
+// with one attribute name
+
+db.createCollection("school")
+db.school.insertOne({
+	name: "Holberton school"
+})
