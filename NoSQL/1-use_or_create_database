@@ -1,0 +1,4 @@
+// MONGO script that create or use a DB
+
+use my_db
+//equivaut a create if not existe and use
