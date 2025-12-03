@@ -7,7 +7,7 @@ if __name__ == "__main__":
     logs_collection = client.logs.nginx
 
     logs = logs_collection.find()
-    print(f'{logs.count_documents()} logs')
+    print(f'{len(logs)} logs')
     print("Methods")
     get = logs_collection.find({'method': 'GET'})
     post = logs_collection.find({'method': 'POST'})
