@@ -12,5 +12,5 @@ def schools_by_topic(mongo_collection, topic):
     :param topic: string your are looking for
     in the attribute
     """
-    documents = mongo_collection.find({'topic': {'$in': [topic]}})
+    documents = mongo_collection.find({'topics': {'$in': [topic]}})
     return documents
