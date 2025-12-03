@@ -17,6 +17,7 @@ if __name__ == "__main__":
         {'method': 'GET',
          'path': '/status'})
     print(f'\tmethod GET: {get}')
+    print(repr("\tmethod GET"))
     print("\t" + "method POST: " + str(post))
     print("\t" + "method PUT: " + str(put))
     print("\t" + "method PATCH: " + str(patch))
