@@ -16,9 +16,9 @@ if __name__ == "__main__":
     status = logs_collection.count_documents(
         {'method': 'GET',
          'path': '/stats'})
-    print("\t" + "method GET: " + get)
-    print("\t" + "method POST: " + post)
-    print("\t" + "method PUT: " + put)
-    print("\t" + "method PATCH: " + patch)
-    print("\t" + "method DELETE: " + delete)
+    print("\t" + "method GET: " + str(get))
+    print("\t" + "method POST: " + str(post))
+    print("\t" + "method PUT: " + str(put))
+    print("\t" + "method PATCH: " + str(patch))
+    print("\t" + "method DELETE: " + str(delete))
     print(f'{status} status check')
