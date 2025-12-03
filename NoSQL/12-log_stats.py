@@ -16,7 +16,7 @@ if __name__ == "__main__":
     status = logs_collection.count_documents(
         {'method': 'GET',
          'path': '/status'})
-    print("\t" + "method GET: " + str(get))
+    print(f'\tmethod GET: {get}')
     print("\t" + "method POST: " + str(post))
     print("\t" + "method PUT: " + str(put))
     print("\t" + "method PATCH: " + str(patch))
