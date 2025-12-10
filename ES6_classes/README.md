@@ -1,0 +1,1 @@
+Here are files I made and use to practice Javascript classes, symbols and metaprogramming
