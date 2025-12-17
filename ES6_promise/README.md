@@ -1,0 +1,1 @@
+Here are some files and function I made in order to practice Promises un JS
