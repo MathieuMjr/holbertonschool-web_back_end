@@ -26,7 +26,7 @@ function countStudents(path) {
       console.log(`Number of students in ${key}: ${value.students_nb}. List: ${value.students_list.join(', ')}`);
     }
   } catch (error) {
-    console.log('Cannot load the database');
+    throw new Error('Cannot load the database');
   }
 }
 
