@@ -27,7 +27,6 @@ function countStudents(path) {
     }
   } catch (error) {
     console.log('Cannot load the database');
-    console.log(error);
   }
 }
 
