@@ -23,7 +23,7 @@ function countStudents(path) {
     }
     console.log(`Number of students: ${totalStudents}`);
     for (const [key, value] of Object.entries(results)) {
-      console.log(`Number of students in ${key}: ${value.students_nb}. List: ${value.students_list}`);
+      console.log(`Number of students in ${key}: ${value.students_nb}. List: ${value.students_list.join(', ')}`);
     }
   } catch (error) {
     console.log('Cannot load the database');
