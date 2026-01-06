@@ -1,7 +1,4 @@
 const fs = require('fs');
-const { parse } = require('csv-parse/sync');
-// accolades importantes pour récup la fonction parse
-// console.log(parse); pour voir avec et sans accolades
 
 function countStudents(path) {
   try {
@@ -9,16 +6,19 @@ function countStudents(path) {
     const results = {};
 
     const data = fs.readFileSync(path, 'utf8');
-    const records = parse(data, { columns: true, skip_empty_lines: true });
+    const lines = data.split('\n'); // le fichier devient un tableau de ligne en se basant sur \n pour répartir les lignes
+    const filteredLines = lines.filter((line) => line.trim() !== ''); // retirer les lignes vides
+    const studentLines = filteredLines.slice(1);
+    // on lit le tableau de ligne à partir de l'index 1 (sans les entêtes)
 
-    for (const row of records) {
+    for (const line of studentLines) { // pour chaque ligne...
       totalStudents += 1;
-      if (!(row.field in results)) {
-        results[row.field] = { students_nb: 1, students_list: [row.firstname] };
-        // single quote pas obligatoire pour les clés en JS si pas de char spéciaux ou nb.
+      const content = line.split(','); // va faire un tableau en séparant les valeurs via la ','
+      if (!(content[3] in results)) {
+        results[content[3]] = { students_nb: 1, students_list: [content[0]] };
       } else {
-        results[row.field].students_nb += 1;
-        results[row.field].students_list.push(row.firstname);
+        results[content[3]].students_nb += 1;
+        results[content[3]].students_list.push(content[0]);
       }
     }
     console.log(`Number of students: ${totalStudents}`);
@@ -27,6 +27,7 @@ function countStudents(path) {
     }
   } catch (error) {
     console.log('Cannot load the database');
+    console.log(error);
   }
 }
 
