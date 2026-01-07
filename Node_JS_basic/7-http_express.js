@@ -38,6 +38,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/students', async (req, res) => {
+  res.write('This is the list of our students\n');
   try {
     const results = await countStudents('database.csv');
     let totalStudents = 0;
@@ -48,7 +49,6 @@ app.get('/students', async (req, res) => {
     // permettent d'ignorer les propriétés liées au prototype
       totalStudents += results[key].students_nb;
     }
-    res.write('This is the list of our students\n');
     res.write(`Number of students: ${totalStudents}\n`);
     for (const [key, value] of Object.entries(results)) {
       res.write(`Number of students in ${key}: ${value.students_nb}. List: ${value.students_list.join(', ')}\n`);
