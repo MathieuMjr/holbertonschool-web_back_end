@@ -29,7 +29,7 @@ function countStudents(path) {
       for (const [key, value] of Object.entries(results)) {
         console.log(`Number of students in ${key}: ${value.students_nb}. List: ${value.students_list.join(', ')}`);
       }
-      resolve();
+      resolve(results);
     }));
   });
 }
