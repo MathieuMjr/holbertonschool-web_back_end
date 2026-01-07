@@ -33,6 +33,8 @@ function countStudents(path) {
 const app = express();
 const port = 1245;
 
+const database = process.argv[2];
+
 app.get('/', (req, res) => {
   res.send('Hello Holberton School!');
 });
@@ -40,7 +42,7 @@ app.get('/', (req, res) => {
 app.get('/students', async (req, res) => {
   res.write('This is the list of our students\n');
   try {
-    const results = await countStudents('database.csv');
+    const results = await countStudents(database);
     let totalStudents = 0;
     for (const key of Object.keys(results)) {
     // for in parcourerait les propriétés pas seulement de results

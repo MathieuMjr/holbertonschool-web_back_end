@@ -32,6 +32,7 @@ function countStudents(path) {
     }));
   });
 }
+const database = process.argv[2];
 
 const app = createServer((req, res) => {
   if (req.url === '/') {
@@ -41,7 +42,7 @@ const app = createServer((req, res) => {
   } else if (req.url === '/students') {
     res.statusCode = 200;
     res.setHeader('Content-type', 'text/plain');
-    countStudents('database.csv')
+    countStudents(database)
       .then((results) => {
         const totalStudents = Object.values(results)
           .reduce((sum, field) => sum + field.students_nb, 0);
